@@ -53,7 +53,7 @@ func (z Broker) NewPublisherMust() *Publisher {
 	return pub
 }
 
-func newPubSocket(bufferSize int) (zmq.Socket, error) {
+func newPubSocket(bufferSize int) (*zmq.Socket, error) {
 	ctx, err := GetGlobalContext()
 	if err != nil {
 		return nil, err

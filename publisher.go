@@ -7,10 +7,10 @@ import (
 // Publisher creates a thread/goroutine-unsafe publisher. Only a
 // single goroutine must use the created publisher.
 type Publisher struct {
-	sock zmq.Socket
+	sock *zmq.Socket
 }
 
-func newPublisher(sock zmq.Socket) *Publisher {
+func newPublisher(sock *zmq.Socket) *Publisher {
 	pub := new(Publisher)
 	pub.sock = sock
 	return pub

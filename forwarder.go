@@ -7,9 +7,9 @@ import (
 // Forwarder is a zeromq forwarder device acting as a broker between
 // multiple publishers and multiple subscribes.
 type Forwarder struct {
-	ctx      zmq.Context
-	frontend zmq.Socket
-	backend  zmq.Socket
+	ctx      *zmq.Context
+	frontend *zmq.Socket
+	backend  *zmq.Socket
 	options  Broker
 }
 
