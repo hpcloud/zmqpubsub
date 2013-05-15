@@ -17,7 +17,7 @@ func initializeGlobalContext() {
 }
 
 // GetGlobalContext returns a singleton zmq Context for the current Go
-// process. 
+// process.
 func GetGlobalContext() (zmq.Context, error) {
 	once.Do(initializeGlobalContext)
 	return globalContext, globalContextErr
