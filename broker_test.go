@@ -9,6 +9,9 @@ import (
 
 // Test a simple pub sub case.
 func TestMonolithic(t *testing.T) {
+	// XXX
+	t.Skip("Bug 99013")
+
 	data := map[string]bool{
 		"foo": true, "bar": true, "golang": true}
 	z := Broker{
