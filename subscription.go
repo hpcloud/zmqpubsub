@@ -53,6 +53,7 @@ func (sub *Subscription) loop() {
 		sub.Killf("Couldn't connect to %s: %s", sub.addr, err)
 		return
 	}
+	defer socket.Close()
 
 	// Read and stream the results in a channel
 	pollItems := []zmq.PollItem{zmq.PollItem{socket, 0, zmq.POLLIN, 0}}
