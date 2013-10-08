@@ -1,6 +1,6 @@
-# pubsub
+# zmqpubsub
 
-pubsub is a simple Go pubsub implementation on top of ZeroMQ.
+zmqpubsub is a simple Go pubsub implementation on top of ZeroMQ.
 
 It abstracts the underlying ZeroMQ machinery to provide a Go-friendly
 API for the publish-subscribe messaging pattern.
@@ -12,7 +12,7 @@ API for the publish-subscribe messaging pattern.
 First setup a broker:
 
 ```Go
-var Broker pubsub.Broker
+var Broker zmqpubsub.Broker
 
 func init() {
 	Broker.PubAddr = "tcp://127.0.0.1:4000"
