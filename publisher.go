@@ -1,4 +1,4 @@
-package pubsub
+package zmqpubsub
 
 import (
 	zmq "github.com/alecthomas/gozmq"
