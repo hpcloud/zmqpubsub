@@ -1,0 +1,13 @@
+{
+    "github.com/alecthomas/gozmq": {
+        "repo": "http://git-mirrors.activestate.com/gozmq.git",
+        "version": "9e15b37d",
+        "type": "git-clone",
+        "alias": "github.com/alecthomas/gozmq"
+    },
+    "launchpad.net/tomb": {
+        "repo": "launchpad.net/tomb",
+        "version": "17",
+        "type": "bzr"
+    }
+}
