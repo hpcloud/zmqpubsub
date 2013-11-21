@@ -26,12 +26,13 @@ func main() {
 }
 ```
 
-The broker specifies the addresses to which publishers and subscribers
-(whether from the same process or a different node) will connect to.
+The broker specifies the addresses to which publishers/subscribers 
+will connect to/from.
 
 ## Subscriber
 
-Subscription messages are sent in a Go channel. Subscriptions can be
+Subscription messages are sent in a Go channel. Thanks to [Tomb](
+https://launchpad.net/tomb), subscriptions can be
 stopped at any time by calling `Stop`.
 
 ```Go
@@ -45,9 +46,9 @@ for msg := range sub.Ch {
 
 ## Publisher
 
-The publisher part is equivalently simple. Do remember, however, that
-as publishers are not thread-safe they must be managed from the same
-goroutine that created them.
+The publisher part is equivalently simple. It should be noted however 
+that as publishers are not thread-safe they must be managed from the 
+same goroutine that created them.
 
 ```Go
 pub := Broker.NewPublisherMust()
@@ -59,4 +60,4 @@ pub.MustPublish("key", "hello universe")
 
 # Example
 
-See `pubsub-example/pubsub.go` for a complete example.
+See `example/pubsub.go` for a complete example.
