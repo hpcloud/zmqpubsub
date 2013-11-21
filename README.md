@@ -60,4 +60,8 @@ pub.MustPublish("key", "hello universe")
 
 # Example
 
-See `example/pubsub.go` for a complete example.
+To run the provided example,
+
+```
+go run -tags zmq_3_x example/pubsub.go
+```
