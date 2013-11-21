@@ -5,6 +5,12 @@ zmqpubsub is a simple Go pubsub implementation on top of ZeroMQ.
 It abstracts the underlying ZeroMQ machinery to provide a Go-friendly
 API for the publish-subscribe messaging pattern.
 
+# Install
+
+```
+go get -tags zmq_3_x github.com/ActiveState/zmqpubsub
+```
+
 # Usage
 
 ## Broker
