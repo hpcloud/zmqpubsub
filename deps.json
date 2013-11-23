@@ -1,6 +1,6 @@
 {
     "github.com/alecthomas/gozmq": {
-        "repo": "http://git-mirrors.activestate.com/gozmq.git",
+        "repo": "http://git-mirrors.activestate.com/github.com/alecthomas/gozmq.git",
         "version": "9e15b37d",
         "type": "git-clone",
         "alias": "github.com/alecthomas/gozmq"
