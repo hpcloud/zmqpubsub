@@ -35,11 +35,18 @@ func (z Broker) Subscribe(filters ...string) *Subscription {
 }
 
 func (z Broker) NewPublisher() (*Publisher, error) {
+	return z.NewPublisher2("")
+}
+
+func (z Broker) NewPublisher2(addr string) (*Publisher, error) {
 	sock, err := newPubSocket(z.BufferSize)
 	if err != nil {
 		return nil, err
 	}
-	if err = sock.Connect(z.PubAddr); err != nil {
+	if addr == "" {
+		addr = z.PubAddr
+	}
+	if err = sock.Connect(addr); err != nil {
 		sock.Close()
 		return nil, err
 	}
