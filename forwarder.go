@@ -25,26 +25,14 @@ func NewForwarder(options Broker) (*Forwarder, error) {
 	}
 
 	// Publishers speak to the frontend socket
-	if b.frontend, err = b.ctx.NewSocket(zmq.SUB); err != nil {
-		b.ctx.Close()
-		return nil, err
-	}
-	if err = b.frontend.Bind(options.PubAddr); err != nil {
-		b.ctx.Close()
-		return nil, err
-	}
-	if err = b.frontend.SetSockOptString(
-		zmq.SUBSCRIBE, options.SubscribeFilter); err != nil {
+	b.frontend, err = newSubSocketBound(options.SubscribeFilter, options.PubAddr)
+	if err != nil {
 		b.ctx.Close()
 		return nil, err
 	}
 
 	// Subscribers speak to the backend socket
-	if b.backend, err = newPubSocket(options.BufferSize); err != nil {
-		b.ctx.Close()
-		return nil, err
-	}
-	if err = b.backend.Bind(options.SubAddr); err != nil {
+	if b.backend, err = newPubSocketBound(options.BufferSize, options.SubAddr); err != nil {
 		b.ctx.Close()
 		return nil, err
 	}
