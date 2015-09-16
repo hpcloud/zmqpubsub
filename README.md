@@ -8,7 +8,7 @@ API for the publish-subscribe messaging pattern.
 # Install
 
 ```
-go get -tags zmq_3_x github.com/ActiveState/zmqpubsub
+go get -tags zmq_3_x github.com/hpcloud/zmqpubsub
 ```
 
 # Usage
