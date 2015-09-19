@@ -4,7 +4,7 @@ package zmqpubsub
 
 import (
 	zmq "github.com/alecthomas/gozmq"
-	"launchpad.net/tomb"
+	"gopkg.in/tomb.v1"
 	"time"
 )
 
