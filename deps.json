@@ -5,9 +5,10 @@
         "type": "git-clone",
         "alias": "github.com/alecthomas/gozmq"
     },
-    "launchpad.net/tomb": {
-        "repo": "launchpad.net/tomb",
-        "version": "17",
-        "type": "bzr"
+    "gopkg.in/tomb.v1": {
+        "repo": "http://gopkg.in/tomb.v1",
+        "version": "dd632973f1e7218eb1089048e0798ec9ae7dceb8",
+        "type": "git-clone",
+        "alias": "gopkg.in/tomb.v1"
     }
 }
